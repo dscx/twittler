@@ -40,9 +40,14 @@ var randomMessage = function(){
 // generate random tweets on a random schedule
 var generateRandomTweet = function(){
   var tweet = {};
+  var tweetDate = new Date();
+  var timeMinuets = tweetDate.getMinutes();
+  //var timeMinuets2 = tweetDate.getMinutes() < 10 ? '0' + tweetDate.getMinutes : tweetDate.getMinutes;
+  
+  var timeHours = tweetDate.getHours();
   tweet.user = randomElement(users);
   tweet.message = randomMessage();
-  tweet.created_at = new Date();
+  tweet.created_at = (timeHours + ":" + timeMinuets);
   addTweet(tweet);
 };
 
