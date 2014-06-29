@@ -4,6 +4,13 @@ h1{
 	margin-left: 75px;
 
 }
+a{
+	cursor: pointer; 
+	color: #999999;
+}
+
+
+
 body{
    background-color: #343b42;
    background-image: url("moon.png");
@@ -59,6 +66,6 @@ h4{
  	height: auto;
  	width: 150px;
  	border: 2px solid white;
-   background-color: transparent;
+    background-color: transparent;
 
 }
