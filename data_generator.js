@@ -74,3 +74,145 @@ var writeTweet = function(message){
   tweet.message = message;
   addTweet(tweet);
 };
+
+
+
+
+
+///
+
+
+
+ var shawn = function() {
+      $(document).ready(function(){
+        var $div = $('div.shawndrost');
+        $div.html('');
+       
+
+
+        var index = streams.users.shawndrost.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.shawndrost[index];
+          var $tweet = $('<p></p>');
+          $tweet.text('@shawndrost' + ': ' + tweet.message + tweet.created_at);
+          $tweet.appendTo($div);
+          index -= 1;
+          }
+        $.ajax({
+            url: "",
+            success: function(s,x){
+            $("#shawndrost").html(s);
+            }
+      });
+
+      });
+    };
+
+ var shark = function(){
+      $(document).ready(function(){
+        var $div = $('div.sharksforcheap');
+        $div.html('');
+       
+
+
+        var index = streams.users.sharksforcheap.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.sharksforcheap[index];
+          var $tweet = $('<p></p>');
+          $tweet.text('@sharksforcheap' + ': ' + tweet.message + tweet.created_at);
+          $tweet.appendTo($div);
+          index -= 1;
+          }
+        $.ajax({
+            url: "",
+            success: function(s,x){
+            $("#sharksforcheap").html(s);
+            }
+      });
+
+      });
+    };
+
+
+var mrac = function(){
+      $(document).ready(function(){
+        var $div = $('div.mracus');
+        $div.html('');
+       
+
+
+        var index = streams.users.mracus.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.mracus[index];
+          var $tweet = $('<p></p>');
+          $tweet.text('@mracus' + ': ' + tweet.message + tweet.created_at);
+          $tweet.appendTo($div);
+          index -= 1;
+          }
+        $.ajax({
+            url: "",
+            success: function(s,x){
+            $("#mracus").html(s);
+            }
+      });
+
+      });
+    };
+
+
+ var doug = function(){
+      $(document).ready(function(){
+        var $div = $('div.douglascalhoun');
+        $div.html('');
+       
+
+
+        var index = streams.users.douglascalhoun.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.douglascalhoun[index];
+          var $tweet = $('<p></p>');
+          $tweet.text('@douglascalhoun' + ': ' + tweet.message + tweet.created_at);
+          $tweet.appendTo($div);
+          index -= 1;
+          }
+        $.ajax({
+            url: "",
+            success: function(s,x){
+            $("#douglascalhoun").html(s);
+            }
+      });
+
+      });
+    };
+
+   var all = function(){
+      $(document).ready(function(){
+      var $div = $('div.dynamic');
+      $div.html('');
+       $("#tweets").fadeIn();
+        $("#shawndrost").fadeOut();
+        $("#sharksforcheap").fadeOut();
+        $("#mracus").fadeOut();
+        $("#douglascalhoun").fadeOut();
+       
+
+        
+
+        var index = streams.home.length - 1;
+        while(index >= 0){
+          var tweet = streams.home[index];
+          var $tweet = $('<p></p>');
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+          $tweet.appendTo($div);
+          index -= 1;
+          }
+       $.ajax({
+            url: "",
+            success: function(s,x){
+            $("#tweets").html(s);
+            }
+      });
+   });
+    };
+
+

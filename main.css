@@ -21,7 +21,7 @@ body{
 }
 
 div{
-   overflow: scroll;
+   overflow: hidden;
    position: absolute;
    height: 300px;
    width: 500px;
@@ -68,4 +68,8 @@ h4{
  	border: 2px solid white;
     background-color: transparent;
 
+}
+
+.hide {
+	display: none;
 }

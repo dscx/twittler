@@ -10,26 +10,56 @@
   <body>
 
 <div id="users" class="static">
- <a class = "feed"><h4>  Streams</h4> <a/>
+ <a class ="feed"><h4>Streams</h4><a/>
   <a class="feed">@shawndrost</a><br></br>
    <a class="feed">@sharksforcheap</a><br></br>
     <a class="feed">@mracus</a><br></br>
      <a class="feed">@douglascalhoun</a><br></br>
 
-  
-</div>
- 
+  </div>
+
+  <div id="shawndrost" class="shawndrost">
+
+    <script>
+    
+   var $div = $('div.shawndrost');
+        $div.html('');
+       
+
+
+        var index = streams.users.shawndrost.length - 1;
+        while(index >= 0){
+          var tweet = streams.users.shawndrost[index];
+          var $tweet = $('<p></p>');
+          $tweet.text('@shawndrost' + ': ' + tweet.message + tweet.created_at);
+          $tweet.appendTo($div);
+          index -= 1;
+          }
+        $.ajax({
+            url: "",
+            success: function(s,x){
+            $("#shawndrost").html(s);
+            }
+      }); 
+
+</script>
+
+</div> 
 
 <div id="tweets" class="dynamic">
 
     <script>
     
-
+   
       $(document).ready(function(){
         var $div = $('div.dynamic');
         $div.html('');
-
-        var index = streams.home.length - 1;
+        $("#shawndrost").hide();
+        $("#sharksforcheap").hide();
+        $("#mracus").hide();
+        $("#douglascalhoun").hide();
+       
+      var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<p></p>');
@@ -37,14 +67,77 @@
           $tweet.appendTo($div);
           index -= 1;
           }
-        $.ajax({
+       $.ajax({
             url: "",
             success: function(s,x){
             $("#tweets").html(s);
             }
       }); 
+   });
+     
+    
+///////
+     
+     $(".feed:eq(0)").on("click", function(){
+      $(document).ready(function(){
+        var $div = $('div.dynamic');
+        $div.html('');
+        $("#shawndrost").remove();
+        $("#sharksforcheap").remove();
+        $("#mracus").remove();
+        $("#douglascalhoun").remove();
+       
+      var index = streams.home.length - 1;
+        while(index >= 0){
+          var tweet = streams.home[index];
+          var $tweet = $('<p></p>');
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+          $tweet.appendTo($div);
+          index -= 1;
+          }
+       $.ajax({
+            url: "",
+            success: function(s,x){
+            $("#tweets").html(s);
+            }
+      }); 
+   });
       });
 
+      $(".feed:eq(1)").on("click", function(){
+        $("#shawndrost").fadeIn();
+        $("#tweets").remove();   
+        $("#sharksforcheap").fadeOut();
+        $("#mracus").fadeOut();
+        $("#douglascalhoun").fadeOut();
+
+      });
+
+      $(".feed:eq(2)").on("click", function(){
+        $("#tweets").fadeOut();
+        $("#shawndrost").fadeOut();
+            $("#sharksforcheap").fadeIn();
+        $("#mracus").fadeOut();
+        $("#douglascalhoun").fadeOut();
+
+      });      
+      $(".feed:eq(3)").on("click", function(){
+        $("#tweets").fadeOut();
+        $("#shawndrost").fadeOut();
+           $("#mracus").fadeIn();
+        $("#sharksforcheap").fadeOut();
+        $("#douglascalhoun").fadeOut();
+
+      });   
+      $(".feed:eq(4)").on("click", function(){
+        $("#tweets").fadeOut();
+        $("#shawndrost").fadeOut();
+           $("#douglascalhoun").fadeIn();
+        $("#sharksforcheap").fadeOut();
+        $("#mracus").fadeOut();
+        
+
+      });   
       
     </script>
 </div>
