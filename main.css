@@ -21,9 +21,9 @@ body{
 }
 
 div{
-   overflow: hidden;
+   overflow: scroll;
    position: absolute;
-   height: 300px;
+   height: 320px;
    width: 500px;
    margin-left: 200px;
    margin-top: 75px;
