@@ -43,13 +43,11 @@ var generateRandomTweet = function(){
   var tweetDate = new Date();
   var timeMinuets = tweetDate.getMinutes();
   var timeMinuets2 = tweetDate.getMinutes() < 10 ? ('0' + timeMinuets): timeMinuets;
-  //var tweetDiff = new Date() - tweet.created_at;
   
   var timeHours = tweetDate.getHours();
   tweet.user = randomElement(users);
   tweet.message = randomMessage();
   tweet.created_at = " (" + (timeHours + ":" + timeMinuets2) + ")";
-  //tweet.diff = tweetDiff
   addTweet(tweet);
 };
 
@@ -74,6 +72,7 @@ var writeTweet = function(message){
   tweet.message = message;
   addTweet(tweet);
 };
+
 
 
 
