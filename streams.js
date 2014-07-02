@@ -1,8 +1,25 @@
 // Refresh Functions
   var refreshAll;
-  function tweet_refresh() { refreshAll = window.setTimeout(all(),1000); }
-  function clearAll() { window.clearTimeout(refreshAll); }
+  function tweet_refresh() { refreshAll = window.setInterval(all,1000); }
+  function clearAll() { window.clearInterval(refreshAll); }
 
+  var refreshShawn;
+  function tweet_Shawn() { refreshShawn = window.setInterval(shawn,1000); }
+  function clearShawn() { window.clearInterval(refreshShawn); }
+
+  var refreshShark;
+  function tweet_Shark() { refreshShark = window.setInterval(shark,1000); }
+  function clearShark() { window.clearInterval(refreshShark); }
+
+  var refreshMrac;
+  function tweet_Mrac() { refreshMrac = window.setInterval(mrac,1000); }
+  function clearMrac() { window.clearInterval(refreshMrac); }
+
+  var refreshDoug;
+  function tweet_Doug() { refreshDoug = window.setInterval(doug,1000); }
+  function clearDoug() { window.clearInterval(refreshDoug); }
+
+ 
 
 
 //Display functions
@@ -19,6 +36,7 @@ function all() {
           $tweet.appendTo($body);
           index -= 1;
         }
+         //window.setTimeout(refreshShawn,1000);
       }
 
 function shawn() {

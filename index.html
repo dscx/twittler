@@ -23,13 +23,16 @@
 
      $(".feed:eq(0)").on("click", function(){
       $('#tweets').fadeIn();
-      tweet_refresh();
+     tweet_refresh();
+       $(!'#tweets').fadeOut();
+       clearShawn();
+
     });
 
      $(".feed:eq(1)").on("click", function(){
       clearAll();
-      $('#tweets').fadeOut();
-      //Shawn();
+      //$('#tweets').fadeOut();
+      tweet_Shawn();
     });
      $(".feed:eq(2)").on("click", function(){
       
@@ -40,23 +43,8 @@
     <div id="tweets">
     <script>
       $(document).ready(function(){
-        //refreshAll();
+    
       });
-
-      /* function refreshAll() {
-        var $body = $('#tweets');
-        $body.html('');
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $(
-            '<div class="tweet"><div class="message"><span class="user">@' + tweet.user + '</span>: ' + tweet.message + tweet.created_at + '</div></div>');
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-        window.setTimeout(refreshAll,1000);
-      } */
 
 
     </script>
