@@ -23,19 +23,43 @@
 
      $(".feed:eq(0)").on("click", function(){
       $('#tweets').fadeIn();
-     tweet_refresh();
-       $(!'#tweets').fadeOut();
-       clearShawn();
+      tweet_refresh();
+      $(!'#tweets').fadeOut();
+      clearShawn();
+      clearShark();
+      clearMrac();
+      clearDoug();
 
     });
 
      $(".feed:eq(1)").on("click", function(){
       clearAll();
-      //$('#tweets').fadeOut();
       tweet_Shawn();
+      clearShark();
+      clearMrac();
+      clearDoug();
+
     });
      $(".feed:eq(2)").on("click", function(){
-      
+      clearAll();
+      clearShawn();
+      clearMrac();
+      clearDoug();
+      tweet_Shark();
+    });
+      $(".feed:eq(3)").on("click", function(){
+      clearAll();
+      clearShawn();
+      clearShark();
+      clearDoug();
+      tweet_Mrac();
+    });
+       $(".feed:eq(4)").on("click", function(){
+      clearAll();
+      clearShawn();
+      clearShark();
+      clearMrac();
+      tweet_Doug();
     });
       
 </script> 
@@ -43,7 +67,7 @@
     <div id="tweets">
     <script>
       $(document).ready(function(){
-    
+    tweet_refresh();
       });
 
 
